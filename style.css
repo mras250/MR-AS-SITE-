@@ -1,3 +1,7 @@
+/* ================================
+   GENERAL
+================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,174 +10,478 @@
 
 body {
     font-family: Arial, sans-serif;
+    color: #222;
+    min-height: 100vh;
 }
 
-/* =========================
-   HOME PAGE
-========================= */
 
-.home-page {
-    min-height: 100vh;
+/* ================================
+   NAVIGATION BAR
+================================ */
 
-    background: linear-gradient(
-        135deg,
-        #667eea,
-        #764ba2,
-        #f093fb
-    );
+.navbar {
+    width: 100%;
+    height: 75px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
 
-    text-align: center;
+    padding: 0 8%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 10;
 }
 
-.home-content {
-    color: white;
-    padding: 30px;
+
+/* Logo */
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4d4bc7;
 }
 
-.home-content h1 {
-    font-size: 55px;
-    margin-bottom: 20px;
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    gap: 35px;
 }
 
-.home-content p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
+.nav-links a {
+    text-decoration: none;
 
-button {
-    border: none;
-    padding: 14px 35px;
-    font-size: 18px;
-    border-radius: 30px;
-    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
 
-    background: white;
-    color: #5b4bb7;
+    color: #333;
 
     transition: 0.3s;
 }
 
-button:hover {
-    transform: scale(1.08);
-    background: #f0f0f0;
+.nav-links a:hover {
+    color: #5c6ee8;
 }
 
 
-/* =========================
-   ABOUT PAGE
-========================= */
+/* Active page */
 
-.about-page {
-    min-height: 100vh;
+.nav-links a.active {
+    color: #5c6ee8;
+}
+
+
+/* ================================
+   HOME PAGE
+================================ */
+
+.home-page {
 
     background: linear-gradient(
         135deg,
-        #eef2f3,
-        #dfe9f3
+        #667eea,
+        #764ba2
     );
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px;
+    min-height: 100vh;
 }
 
+
+/* Home content */
+
+.home-content {
+
+    min-height: calc(100vh - 75px - 60px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: white;
+}
+
+
+.home-content h1 {
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+.home-content p {
+
+    font-size: 19px;
+
+    max-width: 650px;
+
+    line-height: 1.7;
+
+    margin-bottom: 10px;
+}
+
+
+/* Main button */
+
+.main-button {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 35px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #514fc8;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.main-button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ================================
+   INNER PAGES
+================================ */
+
+.inner-page {
+
+    background: #eef3f8;
+
+    min-height: 100vh;
+}
+
+
+/* ================================
+   ABOUT PAGE
+================================ */
+
 .about-container {
-    width: 900px;
-    max-width: 100%;
+
+    width: 85%;
+
+    max-width: 1000px;
+
+    margin: 80px auto;
+
+    padding: 55px;
 
     background: white;
 
     border-radius: 25px;
 
-    padding: 40px;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
 
     display: flex;
-    align-items: center;
-    gap: 50px;
 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    align-items: center;
+
+    gap: 70px;
 }
+
+
+/* Photo */
 
 .photo-section {
-    flex: 1;
-    text-align: center;
+
+    width: 40%;
+
+    display: flex;
+
+    justify-content: center;
 }
 
+
 .photo-section img {
+
     width: 280px;
+
     height: 280px;
 
     object-fit: cover;
 
     border-radius: 50%;
 
-    border: 7px solid #667eea;
+    border: 7px solid #6575e8;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
+
+/* About text */
 
 .text-section {
-    flex: 1;
+
+    width: 60%;
 }
+
 
 .text-section h1 {
+
     font-size: 42px;
-    color: #5b4bb7;
-    margin-bottom: 10px;
-}
 
-.text-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.text-section p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: #555;
+    color: #514fc8;
 
     margin-bottom: 15px;
 }
 
-.text-section button {
-    background: #667eea;
-    color: white;
 
-    margin-top: 15px;
+.text-section h2 {
+
+    font-size: 27px;
+
+    margin-bottom: 25px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+.text-section p {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+
+    color: #444;
+}
+
+
+/* ================================
+   CONTACT PAGE
+================================ */
+
+.contact-container {
+
+    width: 85%;
+
+    max-width: 800px;
+
+    margin: 80px auto;
+
+    text-align: center;
+
+    padding: 50px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+.contact-container h1 {
+
+    font-size: 42px;
+
+    color: #514fc8;
+
+    margin-bottom: 20px;
+}
+
+
+.contact-intro {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #555;
+
+    margin-bottom: 35px;
+}
+
+
+.contact-card {
+
+    text-align: left;
+
+    background: #f4f6ff;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+.contact-card h2 {
+
+    color: #514fc8;
+
+    margin-bottom: 20px;
+}
+
+
+.contact-card p {
+
+    font-size: 17px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 14px;
+
+    color: #555;
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
 
 @media (max-width: 700px) {
 
-    .home-content h1 {
-        font-size: 38px;
+    .navbar {
+
+        height: auto;
+
+        padding: 18px 25px;
+
+        flex-direction: column;
+
+        gap: 15px;
     }
+
+
+    .nav-links {
+
+        gap: 20px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 15px;
+    }
+
+
+    .home-content h1 {
+
+        font-size: 35px;
+    }
+
 
     .home-content p {
-        font-size: 17px;
+
+        font-size: 16px;
     }
 
+
     .about-container {
+
         flex-direction: column;
+
+        width: 90%;
+
+        margin: 40px auto;
+
+        padding: 30px 20px;
+
+        gap: 35px;
+    }
+
+
+    .photo-section {
+
+        width: 100%;
+    }
+
+
+    .photo-section img {
+
+        width: 220px;
+
+        height: 220px;
+    }
+
+
+    .text-section {
+
+        width: 100%;
+
         text-align: center;
+    }
+
+
+    .text-section h1 {
+
+        font-size: 35px;
+    }
+
+
+    .text-section p {
+
+        font-size: 16px;
+    }
+
+
+    .contact-container {
+
+        width: 90%;
+
+        margin: 40px auto;
+
         padding: 30px 20px;
     }
 
-    .photo-section img {
-        width: 200px;
-        height: 200px;
-    }
 
-    .text-section h1 {
-        font-size: 34px;
+    .contact-container h1 {
+
+        font-size: 35px;
     }
 
 }
